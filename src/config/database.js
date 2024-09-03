@@ -12,6 +12,7 @@ module.exports = {
         underscoredAll: true,
         'createAt': 'created_at',
         'updatedAt': 'updated_at',
+        'passwordHash': 'password_hash',
     },
     dialectOptions: {
         timezone: 'America/Sao_Paulo'

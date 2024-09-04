@@ -20,8 +20,8 @@ class UserController{
         }
         catch(e){
             return response.status(400).json({
-                errors: e.errors.map((err) => err.message),
-              });
+               errors: e.errors.map((erro) => erro.message),
+            });
         }
     }
 
@@ -39,7 +39,7 @@ class UserController{
 
     async update(request, response){
         try{
-            const user = await User.findByPk(request.params.id);
+            const user = await User.findByPk(request.userId);
 
             if(!user){
                 return response.status(400).json({
@@ -61,7 +61,7 @@ class UserController{
 
     async delete(request, response){
         try{
-            const user = await User.findByPk(request.params.id);
+            const user = await User.findByPk(request.userId);
 
             if(!user){
                 return response.status(400).json({

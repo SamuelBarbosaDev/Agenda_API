@@ -4,9 +4,10 @@ import loginMiddlewares from '../middlewares/loginMiddlewares';
 
 const router = new Router();
 
-router.get('/', userController.index);
+// router.get('/', userController.index); // Lista usuários
+// router.get('/:id', userController.show); // Lista usuário
+
 router.post('/', userController.store);
-router.get('/:id', userController.show);
 router.put('/', loginMiddlewares, userController.update);
 router.delete('/', loginMiddlewares, userController.delete);
 

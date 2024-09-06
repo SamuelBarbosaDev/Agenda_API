@@ -5,6 +5,7 @@ const router = new Router();
 
 router.get('/', AlunosControllers.index)
 router.post('/', AlunosControllers.store)
+router.get('/:id', AlunosControllers.show)
 router.put('/:id', AlunosControllers.update)
 router.delete('/:id', AlunosControllers.delete)
 

@@ -23,6 +23,21 @@ class AlunosController{
         }
     }
 
+    async show(request, response){
+        try{
+            const aluno = await alunoModel.findByPk(request.params.id);
+            if(!aluno){
+                return response.json({errors: ["Aluno não encontrado."]})
+            }
+
+            return response.json(aluno)
+        }
+        catch(e){
+            console.warn(e)
+            return response.status(400).json({errors: ["Não foi possível encontrar o aluno."]})
+        }
+    }
+
     async update(request, response){
         try{
             const aluno = await alunoModel.findByPk(request.params.id);

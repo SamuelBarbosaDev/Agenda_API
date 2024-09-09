@@ -45,7 +45,7 @@ class AlunosController{
                 return response.json({errors: ["Aluno não encontrado."]})
             }
 
-            const alunoUpdate = aluno.update(request.body)
+            const alunoUpdate = await aluno.update(request.body)
 
             return response.json(alunoUpdate)
         }

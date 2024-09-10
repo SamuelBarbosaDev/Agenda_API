@@ -17,7 +17,7 @@ export default {
             callback(null, resolve(__dirname, '..', '..', 'uploads', 'images'));
         },
         filename: (request, file, callback) => {
-            callback(null, `${Date.now()}_${aleatorio}${extname(file.originalname)}`);
+            callback(null, `${Date.now()}_${aleatorio()}${extname(file.originalname)}`);
         },
     }),
 };

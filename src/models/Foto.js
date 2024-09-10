@@ -1,7 +1,7 @@
 import Sequelize, { Model } from 'sequelize';
 import appConfig from '../config/appConfig'
 
-export default class Aluno extends Model{
+export default class Foto extends Model{
     static init(sequelize){
         super.init({
             originalname: {
@@ -35,7 +35,7 @@ export default class Aluno extends Model{
         return this;
     }
 
-    static associations(models){
-        this.belongsTo(models.Aluno, { foreignKey: 'aluno_id' });
+    static associate(models) {
+        this.belongsTo(models.Aluno, { foreignKey: 'aluno_id'});
     }
 }
